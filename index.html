@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <h1 id="courseTitleHeader">My Course</h1>
+      <small>simple course + quiz (no backend)</small>
+    </div>
+    <div class="actions">
+      <button id="tab-learner" class="tab active">Learner</button>
+      <button id="tab-admin" class="tab">Admin</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="view-learner" class="panel active">
+      <div class="card">
+        <h2 id="courseTitle">Course</h2>
+        <ul id="lessonList" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Quiz</h3>
+        <div id="quizBox"></div>
+        <div class="row">
+          <button id="startQuiz" class="btn">Start Quiz</button>
+          <button id="submitQuiz" class="btn" disabled>Submit</button>
+          <span id="quizScore" class="pill"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-admin" class="panel">
+      <div id="adminLocked" class="card center">
+        <h3>Admin</h3>
+        <input id="pass" placeholder="Enter admin passcode (default 1234)"/>
+        <button id="unlock" class="btn">Unlock</button>
+      </div>
+
+      <div id="adminBody" class="hidden">
+        <div class="card">
+          <h3>Course Settings</h3>
+          <label>Course Title</label>
+          <input id="courseTitleInput" placeholder="e.g., MAT Training Basics"/>
+          <div class="row">
+            <button id="saveCourse" class="btn">Save Title</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Lessons</h3>
+          <div class="grid-2">
+            <div>
+              <label>Lesson Title</label>
+              <input id="lessonTitle" placeholder="Wheelchair Securement"/>
+              <label>Resource URL (PDF, Video, Google Drive, etc.)</label>
+              <input id="lessonUrl" placeholder="https://..."/>
+              <div class="row"><button id="addLesson" class="btn">Add Lesson</button></div>
+            </div>
+            <div><ul id="lessonAdminList" class="list"></ul></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quiz Builder</h3>
+          <label>Question</label>
+          <input id="qText" placeholder="What does MAT stand for?"/>
+          <div class="grid-2">
+            <div>
+              <label>Option A</label><input id="optA"/>
+              <label>Option B</label><input id="optB"/>
+            </div>
+            <div>
+              <label>Option C</label><input id="optC"/>
+              <label>Option D</label><input id="optD"/>
+            </div>
+          </div>
+          <label>Correct answer</label>
+          <select id="correct">
+            <option value="0">A</option><option value="1">B</option>
+            <option value="2">C</option><option value="3">D</option>
+          </select>
+          <div class="row"><button id="addQuestion" class="btn">Add Question</button></div>
+          <ol id="questionList" class="list"></ol>
+        </div>
+
+        <div class="card">
+          <h3>Backup / Restore</h3>
+          <div class="row">
+            <button id="exportBtn" class="btn outline">Export JSON</button>
+            <input type="file" id="importFile" accept="application/json"/>
+            <button id="importBtn" class="btn">Import JSON</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> My Course</footer>
+  <script src="app.js"></script>
+</body>
+</html>

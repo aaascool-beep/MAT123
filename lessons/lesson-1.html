@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lesson 1 – Welcome to MAT</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>.container{max-width:860px;margin:24px auto;padding:16px}</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand"><h1>MAT – Lesson 1</h1><small>Introduction</small></div>
+    <div class="actions"><a class="tab" href="/">Home</a></div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Welcome to MAT Training</h2>
+      <p>This lesson explains the goals of Mobility Assistance Technician training.</p>
+      <ul>
+        <li>Safety basics</li>
+        <li>Securement overview</li>
+        <li>Dignity and communication</li>
+      </ul>
+      <p><em>Tip:</em> Use the “Home” button to return to the course page.</p>
+    </div>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> My Course</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
